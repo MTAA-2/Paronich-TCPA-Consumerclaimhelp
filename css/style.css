@@ -148,12 +148,26 @@ body {
 /* Second parallax section (used on the dark "Who Is Calling You?" section) —
    same overlay as .section-parallax, with its own placeholder image URL. */
 .section-parallax-2 {
+ --overlay-rgb: 19, 41, 75;      /* overlay color as R, G, B — this is your navy #13294b */
+  --overlay-opacity: 0.82;        /* overlay strength */
   background-image:
     linear-gradient(
       rgba(var(--overlay-rgb), var(--overlay-opacity)),
       rgba(var(--overlay-rgb), var(--overlay-opacity))
     ),
-    url("YOUR-IMAGE-URL-HERE-2");   /* placeholder — replace with the image URL to be provided */
+    url("https://consumerclaimhelp.com/images/halls-of-justice.jpg");   /* placeholder — replace with the image URL to be provided */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* this line is the parallax effect */
+  color: #fff;                    /* text over a dark overlay */
+
+
+/* iOS Safari ignores background-attachment: fixed — fall back to a normal scroll */
+@media (max-width: 900px) {
+  .section-parallax { background-attachment: scroll; }
+
+}
 }
 
 /* ---------- OVERFLOW FORM CARD ----------
