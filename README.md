@@ -1,58 +1,42 @@
-# Robocall Help Landing Page — GitHub Pages (static) version
+# Consumer Claim Help (Wrong-Number Robocalls) — Rebuilt GitHub Pages version
 
-A static (HTML + CSS only, no PHP) wrong-number robocall (TCPA) landing page for **Paronich Law, P.C.**, built on the framework of your uploaded BioZorb page (`index-5.html` / `style-5.css`) and filled with content from **robocallhelp.com**. Per your standing instruction, all branding and firm-information areas were converted to the sample site's firm.
+A static (HTML + CSS only, no PHP) rebuild of **consumerclaimhelp.com** — the Paronich Law, P.C. wrong-number robocall (TCPA) page — on the current framework (your uploaded `index-6.html` / `style-6.css`), adding the newer framework elements: **lawyer picture areas** and **parallax background placeholders in the sections**. Content, firm, palette, and typeface are the live site's own.
 
-## Kept from your framework, unchanged
+## Kept from the framework, unchanged
 
 - Page structure, classes, the MTAA CIPA block script, and your Meta Pixel (`1665132690448359`).
 - Your form embed: `forms.mtaa.ai/f/nf_441462e043274be8bab32ea3e44ac34c`, in the overflow form card — the container hangs past the hero over the section below it, the frame scrolls internally with `overflow: auto` if the embed runs tall, and your mobile values from the framework are preserved.
-- The call/text consent paragraph in the footer disclaimer.
-- Footer legal links still point to your `privacy-policy.html` and `disclaimer.html` on justicehelpnow.com (your hosted legal pages from the framework). Say the word if you want them pointed elsewhere for this page.
+- The commented-out site header block (converted inside the comment to Paronich Law, so it is correct if you uncomment it), with the firm name carried in the hero, as in your current framework. Note: the live site's old visible header is therefore not reproduced — the header phone went with it; the number still appears in the review section and footer, as below.
+- The call/text consent paragraph in the footer disclaimer, and the footer legal links to your `privacy-policy.html` / `disclaimer.html` on justicehelpnow.com.
 
-## Two framework items converted
+## New elements added in this redo
 
-- **Logo images removed.** The framework's header and footer Bernheim Kelley logo images (personaljusticeclaim.com) were replaced with a Paronich Law text logo in the header slot and the firm name/address in the footer contact block. Your `.logo-size` CSS rules remain in the stylesheet, unused, so the CSS stays faithful to your upload — if you host a Paronich logo on your image CDN, it can drop back into the same slots.
-- **Hero video removed.** The framework's hero slot held the BioZorb Wistia video; it was replaced with text hero copy from the sample site. If you have a robocall video ID, send it and it can go back into that same slot.
+- **Lawyer picture areas** — a "Meet the Attorneys at Paronich Law" block at the end of the review section, in the framework's team-block format, with two photo slots. The site names no individual attorneys, so the slots are placeholders: image files `images/lawyer-photo-1.jpg` and `images/lawyer-photo-2.jpg` (create an `images/` folder next to `index.html` and drop the photos in with those names, or swap in hosted URLs) and `[Attorney Name]` captions to replace with each lawyer's name and title.
+- **Parallax placeholders in the sections** — the hero keeps your `.section-parallax` block with its image line as a placeholder (`YOUR-IMAGE-URL-HERE`), and the dark "Who Is Calling You?" section now carries it too, via one added CSS rule, `.section-parallax-2`, which reuses the same navy overlay (rgb 19, 41, 75 at 0.75 — already this site's navy) with its own placeholder (`YOUR-IMAGE-URL-HERE-2`), so the two section images can be set independently when you provide the URLs. Until then those sections render as the solid navy tint over their backgrounds. As in the Taco Bell build, the mobile fallback's misspelled `.section--parallax` selector was fixed to `.section-parallax` so the iOS fallback applies.
 
-## Firm information — converted to the sample site (Paronich Law)
+## Firm, content, and the phone number
 
-- Title/meta and header: Paronich Law, P.C.
-- Footer contact: Paronich Law, P.C., 350 Lincoln St #2400, Hingham, MA 02043.
-- Disclaimer: the sample's sponsorship line — "THIS IS ATTORNEY ADVERTISING sponsored by Paronich Law, P.C., located at 350 Lincoln St #2400, Hingham, MA 02043."
-- Copyright: © 2026 Paronich Law, P.C.
-- All prior-firm traces verified at zero: no Bernheim Kelley, Lerner & Rowe, Goldwater, or Weltchek names, numbers, addresses, image hosts, or content, and no BioZorb content or video.
+- Everything is Paronich Law, P.C., 350 Lincoln St #2400, Hingham, MA 02043 — title/meta, hero firm line, sponsorship line in the disclaimer, © 2026 Paronich Law, P.C. Content is the live site's: the TCPA explainer and "Don't assume it was just an annoying mistake," the firm's five points, why companies keep calling the wrong person, the nine-card "Who Is Calling You?" grid, $500–$1,500 per qualifying violation "depending on the facts," the four qualification statements, and "Don't Delete Those Voicemails."
+- **Phone:** (833) 965-2070 is kept in the review section and footer. On the earlier robocall build this number was flagged because robocallhelp.com's rendered page didn't visibly show it — but your published consumerclaimhelp.com does display it (header, mid-page, and footer), so the question is settled in favor of keeping it.
+- All prior-framework traces verified at zero: no Lerner and Rowe names or image hosts (familyjusticenow.com is gone from both files, including the commented header), and no birth-injury or Taco Bell content anywhere.
 
-### A note on the phone number — please read
+## Colors and typeface
 
-The page includes **(833) 965-2070** ("Questions? We are here to help") in the header, review section, and footer. That number and wording appear at the top of the sample site's extracted page content. However, a separate live inspection of the *rendered* page on 2026-10-30 did not find any phone number visibly displayed in the header, body, or footer screenshots — contact there is presented through the form. The number may live in a hidden or mobile-only element of the sample. It is the sample's own number (nothing was invented), and it has been kept on that basis — say the word if you want it stripped like the stroke page, and it will come out of all three spots.
+`css/style.css` is your uploaded `style-6.css` with **color values only** changed (diff-verified), plus the one added `.section-parallax-2` rule described above and the parallax placeholder/fix. The palette is the live consumerclaimhelp.com design, re-sampled from the rendered page on 2026-11-03 (identical to the October robocall build's):
 
-## Colors
+- Deep navy `#13294b` for the top bar, dark section, and footer; indigo `#1e1a5e` through the hero gradient to charcoal `#262626`
+- Muted gold `#c9a86a` for kickers, headline accents, and checkmark circles (white checks), and for the CTA buttons with white text (hover `#d8bc7a`); yellow-gold `#e8c87a` highlights on dark backgrounds
+- Light gray-blue `#eef1f5` compensation band, light gray `#f2f2f2` section background
 
-`css/style.css` is your uploaded `style-5.css` with **color values only** changed (diff-verified — every layout, spacing, and overflow rule untouched), matched to the live robocallhelp.com palette, sampled from the rendered site on 2026-10-30:
-
-- Deep navy `#13294b` (their footer) for the top bar, dark section, and footer; indigo `#1e1a5e` (their logo panel) through the hero gradient to charcoal `#262626` (their darkened skyline hero)
-- Gold/bronze `#c9a86a` for kickers, headline accents, checkmarks, and the CTA buttons with white text, like their "Reach Out Now" (hover `#d8bc7a`)
-- Yellow-gold `#e8c87a` highlights on dark backgrounds (hero eyebrow, footer phone) — the sample's color for its compensation eyebrow and amounts
-- Light gray-blue `#eef1f5` for the compensation band
-
-Colors were sampled visually from the rendered page (which uses gradients and a photograph), so they are close approximations rather than values read from that site's stylesheet. The sample also uses a small red accent for "100% Confidential" in its form; the framework has no equivalent element, so red was not mapped.
-
-## Content (from robocallhelp.com)
-
-- Hero: their headline — "Getting Robocalls Meant for Someone Else?" — with their supporting copy: prerecorded calls or messages to your cell phone while a company tries to reach someone else may violate your rights; federal law restricts artificial or prerecorded calls to cell phones without the required consent; $500 to $1,500 may be available for each qualifying violation, depending on the facts.
-- Why Paronich Law? — the TCPA explainer and "Don't assume a wrong-number robocall is simply an annoying mistake," followed by their five points: free case review; no upfront costs; focused on unwanted-call and TCPA class actions; experience litigating TCPA cases in federal courts across the country; no fee unless we obtain a recovery.
-- Why Do Companies Keep Calling the Wrong Person? — their explanation: a new number that previously belonged to a company's customer, or the wrong number associated with a customer; even a mistaken first call doesn't mean enduring repeated prerecorded calls intended for somebody else.
-- Who Is Calling You? — nine cards from their list: banks and financial institutions, debt collectors, creditors, insurance companies, telemarketers, loan servicers, healthcare-related companies, retailers, and other businesses.
-- Compensation — their line: a wrong-number robocall could be worth $500–$1,500 per violation; no obligation, confidential case review, compensation may be available.
-- What We Look At — their four qualification statements: an artificial, prerecorded, or AI-generated voice call/message on your cell phone; intended for another person; you did not give the company permission; you still have voicemails, screenshots, call logs, or other records. Plus "Don't Delete Those Voicemails" — their evidence list: voicemails, screenshots, call history, dates/times, numbers used, texts, the company's name, notes on the message, and records that you asked them to stop.
+Typeface is unchanged from your framework — Fraunces headings with Inter body — because that is the pairing the live site itself runs.
 
 ## Files
 
 ```
-github-robocall-help-landing-page/
+github-consumer-claim-help-landing-page/
 ├── index.html
-├── css/style.css   (your framework CSS, colors only changed)
+├── css/style.css   (your framework CSS, colors only changed + .section-parallax-2)
 └── README.md
 ```
 
-Publish the same way as the other GitHub pages: upload to a repo keeping the structure, Settings → Pages → deploy from branch (root).
+Publish the same way as the other GitHub pages: upload to a repo keeping the structure, Settings → Pages → deploy from branch (root). Add the `images/` folder with the lawyer photos when you have them.

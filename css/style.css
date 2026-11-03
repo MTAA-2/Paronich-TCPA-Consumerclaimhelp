@@ -1,9 +1,10 @@
 /* ============================================================
    Medical Malpractice landing page — modernized design
    ------------------------------------------------------------
-   Dark navy and charcoal, gold/bronze and yellow-gold — palette matched to
-   robocallhelp.com (framework CSS identical to the uploaded file except
-   colors). The hero form card OVERFLOWS the hero:
+   Deep navy, indigo and charcoal with muted gold — palette matched to the live
+   consumerclaimhelp.com (framework CSS identical to the uploaded file except
+   colors, plus one added rule: .section-parallax-2, a second parallax
+   placeholder for the dark section). The hero form card OVERFLOWS the hero:
    it is pulled down past the hero's bottom edge (negative
    bottom margin) so it overlaps the section beneath it, and
    the form frame itself scrolls internally (overflow: auto)
@@ -50,13 +51,11 @@ body {
 
 /* ---------- Header ---------- */
 
-.site-header { background: #fff; border-bottom: 1px solid var(--line); }
+.site-header { background: #ffffff; border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; padding-bottom: 0px; }
 .logo { text-decoration: none; color: var(--navy); }
 .logo-text { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 24px; letter-spacing: 0.01em; }
 .logo-amp { color: var(--gold); }
-.header-phone {color: #13294b; font-size: 16px; font-weight: 600}
-.logo-size {width: 115px}
 
 /* ---------- Buttons ---------- */
 
@@ -119,6 +118,42 @@ body {
   font-size: 13px;
   font-weight: 600;
   color: #f2f2f2;
+}
+
+/* Section with full-bleed background image, parallax scroll,
+   and a color overlay. Adjust --overlay-opacity: 0 = no tint, 1 = solid color. */
+.section-parallax {
+  --overlay-rgb: 19, 41, 75;      /* overlay color as R, G, B — this is your navy #13294b */
+  --overlay-opacity: 0.75;        /* overlay strength */
+  background-image:
+    linear-gradient(
+      rgba(var(--overlay-rgb), var(--overlay-opacity)),
+      rgba(var(--overlay-rgb), var(--overlay-opacity))
+    ),
+    url("YOUR-IMAGE-URL-HERE");   /* placeholder — replace with the image URL to be provided */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* this line is the parallax effect */
+  color: #fff;                    /* text over a dark overlay */
+
+
+/* iOS Safari ignores background-attachment: fixed — fall back to a normal scroll */
+@media (max-width: 900px) {
+  .section-parallax { background-attachment: scroll; }
+
+}
+}
+
+/* Second parallax section (used on the dark "Who Is Calling You?" section) —
+   same overlay as .section-parallax, with its own placeholder image URL. */
+.section-parallax-2 {
+  background-image:
+    linear-gradient(
+      rgba(var(--overlay-rgb), var(--overlay-opacity)),
+      rgba(var(--overlay-rgb), var(--overlay-opacity))
+    ),
+    url("YOUR-IMAGE-URL-HERE-2");   /* placeholder — replace with the image URL to be provided */
 }
 
 /* ---------- OVERFLOW FORM CARD ----------
@@ -216,7 +251,7 @@ body {
   content: "✓";
   position: absolute; left: 0; top: 0;
   width: 24px; height: 24px; border-radius: 50%;
-  background: var(--gold); color: var(--navy);
+  background: var(--gold); color: #ffffff;
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 14px; font-weight: 800;
 }
@@ -246,7 +281,6 @@ body {
   .card-grid, .footer-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 18px; }
   .hero-sub {display: none}
-  .logo-size {width: 80px}
 }
 
 
