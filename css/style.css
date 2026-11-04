@@ -123,7 +123,7 @@ body {
 /* Section with full-bleed background image, parallax scroll,
    and a color overlay. Adjust --overlay-opacity: 0 = no tint, 1 = solid color. */
 .section-parallax {
-  --overlay-rgb: 19, 41, 75;      /* overlay color as R, G, B — this is your navy #13294b */
+  --overlay-rgb: 0, 0, 0;      /* overlay color as R, G, B — this is your navy #13294b */
   --overlay-opacity: 0.75;        /* overlay strength */
   background-image:
     linear-gradient(
@@ -193,8 +193,6 @@ body {
 
 }
 }
-
-
 /* ---------- OVERFLOW FORM CARD ----------
    The card hangs 110px below the hero (negative margin) so it
    overlaps the section underneath, and the frame scrolls
