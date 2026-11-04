@@ -124,7 +124,7 @@ body {
    and a color overlay. Adjust --overlay-opacity: 0 = no tint, 1 = solid color. */
 .section-parallax {
   --overlay-rgb: 0, 0, 0;      /* overlay color as R, G, B — this is your navy #13294b */
-  --overlay-opacity: 0.75;        /* overlay strength */
+  --overlay-opacity: 0.65;        /* overlay strength */
   background-image:
     linear-gradient(
       rgba(var(--overlay-rgb), var(--overlay-opacity)),
