@@ -241,6 +241,7 @@ body {
 
 .section--dark { background: var(--navy); color: #e6e6e6; }
 .section--dark .lead { color: #d9d9d9; }
+.lead { color: #d9d9d9; }
 
 .section--gold { background: #eef1f5; text-align: center; }
 .section--gold .section-title, .section--gold .lead { margin-left: auto; margin-right: auto; }
