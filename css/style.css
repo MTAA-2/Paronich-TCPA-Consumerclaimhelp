@@ -173,7 +173,7 @@ body {
    same overlay as .section-parallax, with its own placeholder image URL. */
 .section-parallax-3 {
  --overlay-rgb: 255, 255, 255;      /* overlay color as R, G, B — this is your navy #13294b */
-  --overlay-opacity: 0.75;        /* overlay strength */
+  --overlay-opacity: 0.80;        /* overlay strength */
   background-image:
     linear-gradient(
       rgba(var(--overlay-rgb), var(--overlay-opacity)),
@@ -285,7 +285,7 @@ body {
 
 /* ---------- Qualifier list ---------- */
 
-.qualifier-list { list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 12px; max-width: 760px; }
+.qualifier-list { color: #333333; list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 12px; max-width: 760px; }
 .qualifier-list li { padding-left: 34px; position: relative; font-size: 17px; }
 .qualifier-list li::before {
   content: "✓";
