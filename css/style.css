@@ -169,6 +169,31 @@ body {
 
 }
 }
+/* Second parallax section (used on the dark "Who Is Calling You?" section) —
+   same overlay as .section-parallax, with its own placeholder image URL. */
+.section-parallax-3 {
+ --overlay-rgb: 255, 255, 255;      /* overlay color as R, G, B — this is your navy #13294b */
+  --overlay-opacity: 0.75;        /* overlay strength */
+  background-image:
+    linear-gradient(
+      rgba(var(--overlay-rgb), var(--overlay-opacity)),
+      rgba(var(--overlay-rgb), var(--overlay-opacity))
+    ),
+    url("https://consumerclaimhelp.com/images/scales-of-justice.jpg");   /* placeholder — replace with the image URL to be provided */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* this line is the parallax effect */
+  color: #fff;                    /* text over a dark overlay */
+
+
+/* iOS Safari ignores background-attachment: fixed — fall back to a normal scroll */
+@media (max-width: 900px) {
+  .section-parallax { background-attachment: scroll; }
+
+}
+}
+
 
 /* ---------- OVERFLOW FORM CARD ----------
    The card hangs 110px below the hero (negative margin) so it
@@ -241,7 +266,7 @@ body {
 
 .section--dark { background: var(--navy); color: #e6e6e6; }
 .section--dark .lead { color: #d9d9d9; }
-.lead { color: #d9d9d9; }
+.lead-dark { color: #d9d9d9; }
 
 .section--gold { background: #eef1f5; text-align: center; }
 .section--gold .section-title, .section--gold .lead { margin-left: auto; margin-right: auto; }
